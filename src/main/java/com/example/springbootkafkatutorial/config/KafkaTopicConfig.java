@@ -8,7 +8,7 @@ import org.springframework.kafka.config.TopicBuilder;
 
 @Configuration
 public class KafkaTopicConfig {
-    public static final String TOPIC_NAME = "MyTopic";
+    public static final String TOPIC_NAME = "test-topic";
     @Bean
     public NewTopic myNewTopic()  {
         return TopicBuilder
