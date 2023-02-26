@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class KafkaJSONProducer {
+public class JSONKafkaProducer {
     private KafkaTemplate<String, User> kafkaTemplate;
 
-    public KafkaJSONProducer(KafkaTemplate<String, User> kafkaTemplate) {
+    public JSONKafkaProducer(KafkaTemplate<String, User> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
@@ -23,7 +23,7 @@ public class KafkaJSONProducer {
 
         Message<User> message = MessageBuilder
                 .withPayload(data)
-                .setHeader(KafkaHeaders.TOPIC, KafkaTopicConfig.TOPIC_NAME)
+                .setHeader(KafkaHeaders.TOPIC, KafkaTopicConfig.JSON_TOPIC_NAME)
                 .build();
         kafkaTemplate.send(message);
     }

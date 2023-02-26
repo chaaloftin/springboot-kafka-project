@@ -1,10 +1,10 @@
 package com.example.springbootkafkatutorial.model;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
 public class User {
-    private final int id;
-    private final String firstName;
-    private final String lastName;
+    private int id;
+    private String firstName;
+    private String lastName;
 }
