@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class JSONKafkaConsumer {
-    @KafkaListener(topics = KafkaTopicConfig.JSON_TOPIC_NAME, groupId = "myGroup")
+    @KafkaListener(topics = "${spring.kafka.topic.json.name}", groupId = "${spring.kafka.group.name}")
     public void consumer(User user) {
         log.info("JSON message received: " + user.toString());
     }
